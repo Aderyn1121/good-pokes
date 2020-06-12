@@ -1,0 +1,23 @@
+.formPage{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+}
+
+.formPage div{
+    margin-top: 10px;
+}
+
+.formPage input{
+    margin-left: 15px;
+}
+
+.formPage select{
+    margin-left: 15px;
+}
+
+label{
+    align-self: flex-start;
+    text-align: right;
+}

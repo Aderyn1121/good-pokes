@@ -1,0 +1,80 @@
+
+
+ @import './formPage.css';
+
+body{
+    background-color: whitesmoke;
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+
+}
+
+main{
+    max-width: 100%;
+}
+
+a {
+
+    text-transform: capitalize;
+    color: black;
+    text-decoration: none;
+
+}
+
+a:visited {
+    color: black;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-bottom: gray solid 1px;
+    border-radius: 4px;
+    box-shadow: gray;
+}
+
+h1 {
+    text-transform: capitalize;
+}
+
+.pokeList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+}
+
+.ui.segment:first-child{
+    margin: 1rem 0 !important;
+}
+
+.pokeList > div {
+height: 178px;
+width: 178px;
+align-self: center;
+padding-bottom: 0;
+}
+
+.pokeLink{
+    display: flex;
+    flex-direction: column;
+}
+
+.collList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.collList > div{
+    display: flex;
+    height: 150px;
+    width: 150px;
+}
+
+
+.collectionSprite{
+    align-self: flex-end;
+    justify-self: center;
+}
