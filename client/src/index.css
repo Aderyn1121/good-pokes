@@ -78,3 +78,21 @@ padding-bottom: 0;
     align-self: flex-end;
     justify-self: center;
 }
+
+
+.pokeTitleSpan{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pokeName{
+    align-self: center;
+    padding-bottom: 15px;
+}
+
+.spriteName{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-self: center;
+}

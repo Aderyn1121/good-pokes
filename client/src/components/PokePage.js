@@ -77,17 +77,21 @@ class PokePage extends Component {
         return (
             <main>
                 <PokeNavBar name={this.state.name} />
-                <span className='pokeTitleSpan' >
-                    <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.state.id}.png`} alt='Sprite' />
-                    <h1>{this.state.name} - #{this.state.id}</h1>
+                <span className='ui segment pokeTitleSpan' >
+                    <div className='spriteName'>
+                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.state.id}.png`} alt='Sprite' />
+                        <h1 className='pokeName'>{this.state.name} - #{this.state.id}</h1>
+                    </div>
+                    <div className='typeDiv'>
+                        {this.state.types.map((type, i) => (
+                            <img className='typeSprite' key={i} src={require(`../../type-images/${type}.png`)} alt={`${type}`} />
+                        ))}
+                    </div>
 
 
-                    {this.state.types.map((type, i) => (
-                        <img key={i} src={require(`../../type-images/${type}.png`)} alt={`${type}`} />
-                    ))}
                 </span>
                 <div className="ui section divider"></div>
-                <div>
+                <div className='ui segment'>
                     <h2 className='ui header'>Statistics:</h2>
                     <p>Weight: {this.state.weight}</p>
                     <p>HP: {this.state.hp}</p>

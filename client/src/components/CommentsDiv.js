@@ -21,7 +21,7 @@ class CommentsDiv extends Component {
 
     async loadComments() {
         const res = await fetch(`${backendUrl}/reviews/${this.state.id}`,
-            { headers: { 'Authorization': `Bearer ${this.props.token}` } })
+            { headers: { 'Authorization': `Bearer ${this.props.token}`, 'Content-Type': 'application/json', } })
 
         if (res.ok) {
             const commentsObj = await res.json();
