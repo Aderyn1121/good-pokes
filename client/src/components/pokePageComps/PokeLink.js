@@ -15,6 +15,7 @@ class PokeLink extends Component {
 
     componentDidUpdate(prevProps) {
 
+        // console.log(this.props)
         if (prevProps !== this.props) {
             this.setState({
                 name: this.props.name,

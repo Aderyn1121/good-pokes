@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import { signUp } from '../store/authentication';
+import ErrorDiv from './ErrorDiv';
 
 
 class SignUpPage extends Component {
@@ -16,7 +17,7 @@ class SignUpPage extends Component {
 
     async handleSubmit(e) {
         e.preventDefault();
-        this.props.signUp(
+        const res = this.props.signUp(
             this.state.email,
             this.state.password,
             this.state.confirmPassword,
@@ -24,6 +25,8 @@ class SignUpPage extends Component {
             this.state.birthday,
             this.state.pronouns,
             this.state.starter)
+
+
     }
 
     updateEmail = e => {
@@ -69,6 +72,9 @@ class SignUpPage extends Component {
                     Sign up here, or use the provided demo credentials.
                 </div>
                 <div>
+
+                    <ErrorDiv errors={this.props.errors} />
+
                     <form onSubmit={this.handleSubmit}>
 
                         <p><label>Username

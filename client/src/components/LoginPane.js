@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, NavLink } from 'react-router-dom';
 import { login } from '../store/authentication';
+import ErrorDiv from './ErrorDiv';
 
 class LoginPane extends Component {
     constructor(props) {
         super(props);
         this.state = {
             email: 'test@test.com',
-            password: 'test'
+            password: 'test',
+            errors: null
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,6 +19,7 @@ class LoginPane extends Component {
     async handleSubmit(e) {
         e.preventDefault();
         this.props.login(this.state.email, this.state.password);
+
     }
 
     updateEmail = e => {
@@ -31,12 +34,16 @@ class LoginPane extends Component {
         if (this.props.token) {
             return <Redirect to='/' />
         }
+
         return (
             <main className='formPage'>
                 <h1 className='ui header'>Welcome to GoodPokes!</h1>
                 <h3>
                     Please log in.
                 </h3>
+
+                <ErrorDiv errors={this.state.errors} />
+
                 <div className='ui segment'>
                     <form onSubmit={this.handleSubmit}>
                         <p><label>Email Address
@@ -60,6 +67,7 @@ class LoginPane extends Component {
 
         );
     }
+
 }
 
 const mapStateToProps = state => {

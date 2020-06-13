@@ -39,6 +39,12 @@ export const signUp = (email, password, confirmPassword, userName, birthday, pro
             })
         });
 
+        if (!response.ok) {
+            console.log(response);
+            const { errors } = await response.json();
+            return errors;
+        }
+
         if (response.ok) {
             const { token, user: { id } } = await response.json();
             const userId = id;
@@ -46,9 +52,7 @@ export const signUp = (email, password, confirmPassword, userName, birthday, pro
             window.localStorage.setItem(USER_ID, userId);
             dispatch(setToken(token));
             dispatch(setUser(userId));
-        } else {
-            const { errors } = await response.json();
-            console.error(errors);
+            return null;
         }
     }
 
@@ -59,6 +63,12 @@ export const login = (email, password) => async dispatch => {
         body: JSON.stringify({ email, password }),
     });
 
+    if (!response.ok) {
+        console.log(response);
+        const { errors } = await response.json();
+        return errors;
+    }
+
     if (response.ok) {
         const { token, user } = await response.json();
         const userId = user.id;
@@ -66,9 +76,8 @@ export const login = (email, password) => async dispatch => {
         window.localStorage.setItem(USER_ID, userId);
         dispatch(setToken(token));
         dispatch(setUser(userId));
-    } else {
-        const { errors } = await response.json();
-        console.error(errors);
+        return null;
+
     }
 };
 
