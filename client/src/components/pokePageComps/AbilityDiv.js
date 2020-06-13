@@ -44,7 +44,7 @@ class AbilityDescription extends Component {
         if (!this.state.entry) return null;
 
         return (
-            <p className='abilityDesc'>
+            <p className='content' style={{ fontSize: '20px', marginTop: '8px', marginLeft: '15px', borderBottom: 'black 1px solid', paddingBottom: '10px' }}>
                 {this.state.entry}
             </p>
         )
@@ -57,10 +57,10 @@ const AbilityDiv = ({ abilities, ...rest }) => {
     if (!abilities) return null;
 
     return (
-        <div>
+        <div className='ui divided list'>
             {abilities.map((ability, i) => (
-                <div key={i}>
-                    <p>{ability.name}</p>
+                <div className='item' key={i}>
+                    <p className='header' style={{ textTransform: 'capitalize', fontSize: '22px' }}>{ability.name}</p>
                     <AbilityDescription ability={ability} />
                 </div>
             ))}

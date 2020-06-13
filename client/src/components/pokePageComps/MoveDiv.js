@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 
 const MoveList = ({ moves, ...rest }) => (
-    <ul className='moveList'>
+    <ul className='ui divided list'>
         {moves.map((move, i) => (
-            <div className='move' key={i}>
+            <li className='item' style={{ padding: '25px 0', marginLeft: '20px', fontSize: '25px' }} key={i}>
                 {move.move.name}
-            </div>
+            </li>
         ))}
     </ul>
 )
@@ -61,11 +61,11 @@ class MoveDiv extends Component {
         if (!this.state.movePage) return null;
 
         return (
-            <div className='moveDiv'>
+            <div className='ui tertiary inverted red segment'>
                 <MoveList moves={this.state.movePage} />
-                <div className='moveButtons'>
-                    <button className='mini ui button' onClick={this.handlePrevious}>Previous 10</button>
-                    <button className='mini ui button' onClick={this.handleNext}>Next 10</button>
+                <div className='2 fluid ui buttons'>
+                    <button className='negative ui button' onClick={this.handlePrevious}>Previous 10</button>
+                    <button className='negative ui button' onClick={this.handleNext}>Next 10</button>
                 </div>
             </div>
         )

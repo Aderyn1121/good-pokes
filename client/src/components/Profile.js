@@ -55,14 +55,15 @@ class Profile extends Component {
         return (
             <main>
                 <NavBar />
-                <h1 className="ui center aligned header">{this.state.username}</h1>
-                <h3 className="ui center aligned header">
-                    Birthday: {this.state.birthday}
-                </h3>
-                <h3 className="ui center aligned header">{this.state.pronouns}</h3>
-                <div class="ui divider"></div>
+                <div className='ui segment'>
+                    <h1 className="ui center aligned header" style={{ fontSize: '35px' }}>{this.state.username}</h1>
+                    <h3 className="ui center aligned header" style={{ fontSize: '30px' }}>
+                        Birthday: {this.state.birthday}
+                    </h3>
+                    <h3 className="ui center aligned header" style={{ fontSize: '30px' }}>Pronouns: {this.state.pronouns}</h3>
+                </div>
                 <br></br>
-                <div>
+                <div style={{ maxHeight: '1080px' }}>
                     <h2 className="ui center aligned header">Collection</h2>
                     <Collection list={this.state.collection} />
                 </div>

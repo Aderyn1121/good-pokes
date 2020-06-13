@@ -70,30 +70,34 @@ class CommentsDiv extends Component {
 
         return (
             <div className="ui comments">
-                <ul>
-                    {this.state.comments.map((comment, i) => {
-                        let id = comment.id;
-                        return (
-                            <div key={i}>
-                                <span>
-                                    <div>
-                                        <p>{`From ${comment.userName}`}</p>
-                                        <div>{comment.content}</div>
-                                    </div>
-                                    <button className='mini ui red button' onClick={() => this.deleteComment(id)}>Delete Comment</button>
-                                </span>
 
+                {this.state.comments.map((comment, i) => {
+                    let id = comment.id;
+                    return (
+                        <div className='comment' key={i}>
+
+                            <div style={{ display: 'flex', flexDirection: 'column', alignContent: 'space-between', boxSizing: 'border-box', padding: '10px 10px', border: 'darkgreen solid 1px', borderRadius: '10px', boxShadow: '12px 11px 9px 1px rgba(18,74,13,1)', backgroundColor: 'whitesmoke' }}>
+                                <p className='author' style={{ fontSize: '15px' }}>{`From ${comment.userName}`}</p>
+                                <div className='content' style={{ color: 'black', padding: '10px', marginBottom: '10px', marginLeft: '15px', fontSize: '20px' }}>{comment.content}</div>
+                                <button className='tiny red ui button' onClick={() => this.deleteComment(id)}>Delete Comment</button>
                             </div>
-                        )
-                    })}
-                </ul>
 
-                <form onSubmit={this.postComment}>
-                    <input type='textarea' placeholder='Post a comment!' onChange={this.handleForm} value={this.state.newComment}></input>
-                    <button className='tiny ui secondary button' type='submit'>Post</button>
+
+
+                        </div>
+                    )
+                })}
+
+
+                <form className='ui reply form' onSubmit={this.postComment}>
+                    <div className='field' style={{ boxSizing: 'border-box', padding: '10px 10px', border: 'darkgreen solid 1px', borderRadius: '10px', boxShadow: '12px 11px 9px 1px rgba(18,74,13,1)', backgroundColor: 'whitesmoke' }}>
+                        <textarea type='text' placeholder='Post a comment!' onChange={this.handleForm} value={this.state.newComment}></textarea>
+                        <button className='ui blue fluid labeled submit icon button' type='submit'>Post</button>
+                    </div>
                 </form>
 
-            </div >
+            </div>
+
         )
     }
 
