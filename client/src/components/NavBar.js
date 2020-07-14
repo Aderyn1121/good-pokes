@@ -12,7 +12,7 @@ const NavBar = (props) => (
         {/* <PokeByName /> */}
         <span className='3 fluid ui buttons'>
             <NavLink className='tiny ui secondary button' exact to='/'>Home</NavLink>
-            <NavLink className='tiny ui secondary button' exact to='/profile'>My Profile</NavLink>
+            <NavLink className='tiny ui secondary button' exact to='/userprofile'>My Profile</NavLink>
             <LogoutButton />
         </span>
     </nav>
@@ -21,7 +21,7 @@ const NavBar = (props) => (
 export const PokeNavBar = (props) => (
     <nav className='4 fluid ui buttons'>
         <NavLink className='tiny ui secondary button' exact to='/'>Home</NavLink>
-        <NavLink className='tiny ui secondary button' exact to='/profile'>My Profile</NavLink>
+        <NavLink className='tiny ui secondary button' exact to='/userprofile'>My Profile</NavLink>
         <AddPokeButton name={props.name} />
         <LogoutButton />
     </nav>

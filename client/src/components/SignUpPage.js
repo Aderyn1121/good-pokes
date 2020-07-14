@@ -137,7 +137,7 @@ class SignUpPage extends Component {
                         </p>
                         <span className='ui buttons'>
                             <button className='mini ui green button' type='submit'>Sign up!</button>
-                            <NavLink className='mini ui button primary' to='/login'>Back To Login</NavLink>
+                            <NavLink className='mini ui button primary' to='/userlogin'>Back To Login</NavLink>
                         </span>
                     </form>
                 </div>

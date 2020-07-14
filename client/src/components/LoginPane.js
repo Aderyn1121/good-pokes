@@ -60,7 +60,7 @@ class LoginPane extends Component {
                                 onChange={this.updatePassword} />
                         </label></p>
                         <button className='ui mini green button' type='submit'>Login</button>
-                        <NavLink className='ui mini button primary' to={`/sign-up`}>Sign up!</NavLink>
+                        <NavLink className='ui mini button primary' to={`/usersign-up`}>Sign up!</NavLink>
                     </form>
                 </div>
             </main>

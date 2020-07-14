@@ -13,7 +13,7 @@ import Profile from './components/Profile';
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route {...rest} render={(props) => (
     rest.needLogin === true
-      ? <Redirect to='/login' />
+      ? <Redirect to='/userlogin' />
       : <Component {...props} />
   )} />
 )
@@ -41,9 +41,9 @@ class App extends Component {
         <Switch>
           {/* <Route path='/' exact={true} component={Home} /> */}
           <PrivateRoute path='/' exact={true} needLogin={this.props.needLogin} component={Home} />
-          <PrivateRoute path='/profile' exact={true} needLogin={this.props.needLogin} component={Profile} />
-          <Route path='/login' component={LoginPane} />
-          <Route path='/sign-up' component={SignUpPage} />
+          <PrivateRoute path='/userprofile' exact={true} needLogin={this.props.needLogin} component={Profile} />
+          <Route path='/userlogin' component={LoginPane} />
+          <Route path='/usersign-up' component={SignUpPage} />
           <Route path='/pokemon/:pokemonName' exact={true} component={PokePage} />
         </Switch>
       </BrowserRouter>
