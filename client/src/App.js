@@ -45,6 +45,7 @@ class App extends Component {
           <Route path='/userlogin' component={LoginPane} />
           <Route path='/usersign-up' component={SignUpPage} />
           <Route path='/pokemon/:pokemonName' exact={true} component={PokePage} />
+          <Route path='/*' component={LoginPane} />
         </Switch>
       </BrowserRouter>
     )
