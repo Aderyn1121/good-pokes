@@ -5,7 +5,7 @@ import { logout } from '../store/authentication';
 
 const LogoutButton = props =>
     props.loggedOut ?
-        <Redirect to="/login" /> :
+        <Redirect to="/userlogin" /> :
         <button className='tiny ui red button' onClick={props.logout}>Logout</button>
     ;
 
