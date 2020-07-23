@@ -24,6 +24,7 @@ const getUserToken = (user) => {
 
 const restoreUser = (req, res, next) => {
     const { token } = req;
+    console.log(token)
 
     if (!token) {
         return res.set("WWW-Authenticate", "Bearer").status(401).end();
