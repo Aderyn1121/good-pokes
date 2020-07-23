@@ -9,7 +9,7 @@ const {
 
 const router = express.Router();
 
-router.use(requireAuth);
+// router.use(requireAuth);
 
 const reviewValidators = check('content')
     .exists({ checkFalsy: true })
