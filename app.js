@@ -5,7 +5,7 @@ const { environment } = require('./config');
 const userRouter = require('./routes/user');
 const authRouter = require('./routes/userAuth');
 const reviewRouter = require('./routes/reviews');
-const indexRouter = require('./routes/index');
+// const indexRouter = require('./routes/index');
 
 const path = require('path')
 const app = express();
@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded())
 
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
 app.use('/user', userRouter);
 app.use('/reviews', reviewRouter);
 app.use('/', authRouter);
