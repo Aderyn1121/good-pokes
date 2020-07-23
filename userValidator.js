@@ -35,13 +35,13 @@ const validateUser = [
         .withMessage('Please provide an entry for field birthday')
         .isISO8601()
         .withMessage('Please provide a valid date for birthday'),
-    check('password')
-        .exists({ checkFalsy: true })
-        .withMessage('Please provide a value for Password')
-        .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, 'g')
-        .withMessage(
-            'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
-        ),
+    // check('password')
+    //     .exists({ checkFalsy: true })
+    //     .withMessage('Please provide a value for Password')
+    //     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])/, 'g')
+    //     .withMessage(
+    //         'Password must contain at least 1 lowercase letter, uppercase letter, number, and special character (i.e. "!@#$%^&*")'
+    //     ),
     check('confirmPassword')
         .exists({ checkFalsy: true })
         .withMessage('Please provide a value for Confirm Password'),

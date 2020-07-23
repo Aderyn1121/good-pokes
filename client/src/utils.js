@@ -1,4 +1,4 @@
-export const backendUrl = process.env.REACT_APP_BACKEND_URL || 'https://localhost:8080';
+export const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8080';
 
 export const api = 'https://pokeapi.co/api/v2'
 

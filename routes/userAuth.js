@@ -18,10 +18,12 @@ router.post('/sign-up',
     validateUser,
     handleValidationErrors,
     asyncHandler(async (req, res) => {
+        
         let { email, password, confirmPassword, userName, birthday, pronouns, starter } = req.body;
 
         const hashedPassword = await bcrypt.hash(password, 10);
 
+        
         const user = await User.create({
             email,
             hashedPassword,
